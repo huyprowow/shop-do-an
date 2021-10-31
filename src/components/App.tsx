@@ -4,6 +4,7 @@ import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import routers from '../routers/routers';
 import React from 'react';
 // import { Component } from 'react';
+
 export const App=()=> {
   return (
     <BrowserRouter>
