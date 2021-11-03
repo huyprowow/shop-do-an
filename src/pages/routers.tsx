@@ -4,11 +4,11 @@
 // const Account = lazy(() => import("../pages/Account"));
 // const Payment = lazy(() => import("../pages/Payment"));
 // const NotFound = lazy(() => import("../pages/NotFound"));
-import Account from '../pages/Account';
-import HomePage from '../pages/HomePage'
-import AddProduct from '../pages/AddProduct'
-import Payment from '../pages/Payment';
-import NotFound from '../pages/NotFound';
+import Account from './Account';
+import HomePage from './HomePage'
+import AddProduct from './AddProduct'
+import Payment from './Payment';
+import NotFound from './NotFound';
 
 const routers=[
   { path: "/", exact: true, component: HomePage  },

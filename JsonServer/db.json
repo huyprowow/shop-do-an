@@ -1,7 +1,91 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
+    "foods": [
+        {
+          "id":1,
+          "name" : "baked beans",
+          "price" : 0.40,
+          "image" : "../images/beans.jpg",
+          "type" : "vegetables"
+        },
+        {
+          "id":2,
+          "name" : "hot dogs",
+          "price" : 1.99,
+          "image" : "../images/hotdogs.jpg",
+          "type" : "meat"
+        },
+        {
+          "id":3,
+          "name" : "spam",
+          "price" : 2.85,
+          "image" : "../images/spam.jpg",
+          "type" : "meat"
+        },
+        {
+          "id":4,
+          "name" : "refried beans",
+          "price" : 0.99,
+          "image" : "../images/refried.jpg",
+          "type" : "vegetables"
+        },
+        {
+          "id":5,
+          "name" : "kidney beans",
+          "price" : 0.58,
+          "image" : "../images/kidney.jpg",
+          "type" : "vegetables"
+        },
+        {
+          "id":6,
+          "name" : "garden peas",
+          "price" : 0.52,
+          "image" : "../images/gardenpeas.jpg",
+          "type" : "vegetables"
+        },
+        {
+          "id":7,
+          "name" : "mushy peas",
+          "price" : 0.58,
+          "image" : "../images/mushypeas.jpg",
+          "type" : "vegetables"
+        },
+        {
+          "id":8,
+          "name" : "corned beef",
+          "price" : 2.39,
+          "image" : "../images/cornedbeef.jpg",
+          "type" : "meat"
+        },
+        {
+          "id":9,
+          "name" : "tomato soup",
+          "price" : 1.40,
+          "image" : "../images/tomatosoup.jpg",
+          "type" : "soup"
+        },
+        {
+          "id":10,
+          "name" : "chopped tomatoes",
+          "price" : 0.45,
+          "image" : "../images/tomato.jpg",
+          "type" : "vegetables"
+        },
+        {
+          "id":11,
+          "name" : "chicken noodle soup",
+          "price" : 1.89,
+          "image" : "../images/chickennoodle.jpg",
+          "type" : "soup"
+        },
+        {
+          "id":12,
+          "name" : "carrot and coriander soup",
+          "price" : 1.49,
+          "image" : "../images/carrotcoriander.jpg",
+          "type" : "soup"
+        }
+      ]
+      ,
     "comments": [
       { "id": 1, "body": "some comment", "postId": 1 }
     ],
