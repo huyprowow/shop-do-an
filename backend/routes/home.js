@@ -1,10 +1,9 @@
 var express = require('express');
+const food_controller = require('../controllers/foodController');
 var router = express.Router();
-var path=require('path')
+
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.send('connect')
-});
+router.get('/', food_controller.food_list);
 
 module.exports = router;
