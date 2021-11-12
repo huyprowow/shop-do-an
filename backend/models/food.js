@@ -5,9 +5,9 @@ var FoodSchema = new Schema({
   price: { type: Number, required: true },
   image: { type: String, required: true },
   type: { type: String, required: true },
-});
+},{collection: 'food'});
 
 FoodSchema.virtual("url").get(function () {
   return "/api/food/" + this._id;
 });
-module.exports = mongoose.model("Food", FoodSchema);
+module.exports = mongoose.model("Food", FoodSchema,'food');
