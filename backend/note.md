@@ -34,3 +34,5 @@ npm install nodemon --save-dev
 # chay back end
 
 npm run dev
+
+# lan sau nho chi dinh ten db trong bien moi truong voi collection dc anh xa trong Schemal de query vao db da co k nos tao cai moi :v
