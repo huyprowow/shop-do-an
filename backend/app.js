@@ -6,7 +6,7 @@ var logger = require("morgan"); //log lỗi
 var cors = require("cors");
 
 var homeRouter = require("./routes/home");
-var accountRouter = require("./routes/acount");
+var accountRouter = require("./routes/account");
 var indexRouter = require("./routes/index");
 
 const app = express();
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/", indexRouter);
 app.use("/api", homeRouter);
-app.use("/api/users", accountRouter);
+app.use("/api/accounts", accountRouter);
 
 // app.use("*", (req, res) => {
 //   res.status(404).json({ error: "not found" });

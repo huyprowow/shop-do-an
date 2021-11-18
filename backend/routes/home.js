@@ -4,6 +4,6 @@ var router = express.Router();
 
 
 /* GET home page. */
-router.get('/', food_controller.food_list);
+router.get('/', food_controller.get_food_list);
 
 module.exports = router;

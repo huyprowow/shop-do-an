@@ -1,19 +1,30 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faHome} from '@fortawesome/free-solid-svg-icons'
 const Navbar = () => {
     return (
         <ul>
-            <li>
-            <Link to='/'>Home</Link>
+            <li >
+            <Link to='/'>
+                <FontAwesomeIcon icon={faHome} />
+                <span>Home</span>
+            </Link>
             </li>
             <li>
-            <Link to='/addproduct'>Thêm sản phẩm</Link>
+            <Link to='/addproduct'>
+                <span>Thêm sản phẩm</span>
+                </Link>
             </li>
             <li>
-            <Link to='/payment'>Thanh toán</Link>
+            <Link to='/payment'>
+                <span>Thanh toán</span>
+            </Link>
             </li>
             <li>
-            <Link to='/account'>Tài Khoản</Link>
+            <Link to='/account'>
+                <span>Tài Khoản</span>
+            </Link>
             </li>
         </ul>
     )

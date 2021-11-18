@@ -1,10 +1,10 @@
 const Food = require("../models/food");
 // const async = require('async');
 
-exports.food_list = (req, res, next) => {
+exports.get_food_list = (req, res, next) => {
   Food.find()
-  .exec((err, food) => {
+  .exec((err, foods) => {
     if (err) return next(err);
-    res.json(food);
+    res.json(foods);
   });
 };
