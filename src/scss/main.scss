@@ -1,0 +1,22 @@
+//base & layout
+//colors
+//components(button, card, navbar)
+//utilities(margin, padding, opacity)
+//dung node-sass k dung ddc @use,@forward
+@import './abstracts/variable';
+
+@import "./base/reset";
+@import "./base/normalize";
+@import "./base/typography";
+
+@import "./layout/navigation";
+@import "./layout/header";
+@import "./layout/slide-image";
+@import "./layout/carousel";
+
+@import "./modules/font";
+
+@import "./pages/home";
+
+@import "./vendors/fontawesome";
+

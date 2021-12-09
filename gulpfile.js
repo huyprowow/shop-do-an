@@ -1,15 +1,24 @@
 //npm install gulp gulp-sass sass --save-dev
 //npm install gulp-cli
 
-const {src,dest,watch,series}=require('gulp');
-const sass=require('gulp-sass')(require('sass'));
+//khong can file nay de bien dich nua cai node-sass:
+//npm install -save node-sass scr/scss/**/*.scss
 
-function buildStyles(){
-    return src('scss/**/*.scss').pipe(sass()).pipe(dest('src/css'))
+const { src, dest, watch, series } = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+// const purgecss = require("gulp-purgecss");
+
+function buildStyles() {
+  return src("src/scss/**/*.scss")
+    .pipe(sass())
+    // .pipe(purgecss({ content: ["*.html"] }))
+    .pipe(dest("src/css"));
 }
 
-function watchTask(){
-    watch('scss/**/*.scss',buildStyles)
+function watchTask() {
+//   watch(["scr/scss/**/*.scss", "*.html"], buildStyles);
+  watch(["scr/scss/**/*.scss"], buildStyles);
+
 }
 
-exports.default = series(buildStyles,watchTask);
+exports.default = series(buildStyles, watchTask);

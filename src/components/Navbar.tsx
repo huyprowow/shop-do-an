@@ -1,28 +1,37 @@
 import {Link} from 'react-router-dom';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faHome} from '@fortawesome/free-solid-svg-icons'
+
 const Navbar = () => {
     return (
         <ul>
             <li >
             <Link to='/'>
-                <FontAwesomeIcon icon={faHome} />
-                <span>Home</span>
+                <i className="fas fa-home"></i>
+                <span className="hide label">Home</span>
             </Link>
-            </li>
-            <li>
-            <Link to='/addproduct'>
-                <span>Thêm sản phẩm</span>
-                </Link>
             </li>
             <li>
             <Link to='/payment'>
-                <span>Thanh toán</span>
+                <i className="fas fa-wallet"></i>
+                <span  className="hide label">Thanh toán</span>
             </Link>
             </li>
             <li>
+            <Link to='/addproduct' >
+                <i className="fas fa-plus-circle"></i>
+                <span  className="hide label">Thêm</span>
+                </Link>
+            </li>
+            <li>
+            <Link to='/cart'>
+                <i className="fas fa-shopping-cart"></i>
+                <span  className="hide label">Giỏ hàng</span>
+            </Link>
+            </li>
+
+            <li>
             <Link to='/account'>
-                <span>Tài Khoản</span>
+                <i className="fas fa-user"></i>
+                <span  className="hide label">Tài Khoản</span>
             </Link>
             </li>
         </ul>

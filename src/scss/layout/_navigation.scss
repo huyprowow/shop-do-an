@@ -1,0 +1,44 @@
+// @use "../abstracts/variable"; node-sass eu dung dc use
+// @import '../abstracts/variable';
+
+ul {
+  z-index: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  list-style-type: none;
+  background-image: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  li {
+    padding: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    padding: 0.6em;
+    a {
+      text-decoration: none;
+      // color:rgb(92, 5, 92);
+      color: #551a8b;
+    }
+    a:active {
+      color: inherit;
+    }
+  }
+  li:hover {
+    background-color: $opacity-label;
+    transition: 1s;
+    border-left: 1px solid $bisque-color;
+    border-right: 1px solid $bisque-color;
+  }
+}
+
+.active {
+  background-color: $opacity-label;
+  border-left: 1px solid $bisque-color;
+  border-right: 1px solid $bisque-color;
+}

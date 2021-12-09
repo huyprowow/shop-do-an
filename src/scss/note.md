@@ -1,13 +1,15 @@
 # cau truc 7-1: 7 folder import 1 file chinh de sd :v nhung h sass moi update them cai @use vs @forward neu caan nhac xem lai.
 
+## dung node-sass k dung dc @use,@forward chi dung dc @import
+
 - abstracts: bien,ham, mixim,... cai ma k bien dich ra css
 - base: cac style ap dung cho toan project (kieu chuan, co chu,..)
--components(modules): thanh phan sd lai dc ( nut,nav,....)
--layout: bo cuc trang( tieu de,chan tran,...(bo cuc the semantic))
--pages: style rieng cac trang
--theme: mac dinh hay nguoi dung thiet lap
--vendor: ghi de style ban dau cua trang, style cua tv, khung,(b4,jq,..)...
--main: chen may tm kia vao, tep chinh compile ra css
+  -components(modules): thanh phan sd lai dc ( nut,nav,anh,....)
+  -layout: bo cuc trang( tieu de,chan tran,...(bo cuc the semantic))
+  -pages: style rieng cac trang
+  -theme: mac dinh hay nguoi dung thiet lap
+  -vendor: ghi de style ban dau cua trang, style cua tv, khung,(b4,jq,..)...
+  -main: chen may tm kia vao, tep chinh compile ra css
 
 _source:_ [o day](https://itnext.io/structuring-your-sass-projects-c8d41fa55ed4)
 

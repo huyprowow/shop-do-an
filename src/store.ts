@@ -1,6 +1,6 @@
 // import { createStore,compose } from "redux";
 import { rootReducer } from "./reducers/index";
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 
 // declare global {
 //   interface Window {
@@ -16,6 +16,6 @@ import { configureStore } from '@reduxjs/toolkit'
 //   return store;
 // };
 
-const store = configureStore({ reducer: rootReducer })
+const store = configureStore({ reducer: rootReducer });
 
 export default store;
