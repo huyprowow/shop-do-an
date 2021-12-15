@@ -1,34 +1,43 @@
-import {useState} from 'react'
-import { connect } from 'react-redux';
-import { RootState,AppDispatch } from '../types/store';
-// import { i_actionType, i_homeState } from '../types/home';
-import SlideImage from '../components/SlideImage';
-import Carousel from '../components/Carousel';
+import { useEffect, useState } from "react";
+import { connect, useDispatch } from "react-redux";
+import { RootState, AppDispatch } from "../types/store";
+import { i_homeStateData, i_home_props } from "../types/home";
+import { actionGetFoodRequest } from "../actions/home";
 
-const HomePage = ({homeData}:any) => {
-    const [data, setData] = useState(homeData);
-    console.log(homeData);
-    console.log(data);
-    return (
-        <>
-        <h1 id="home-panel">
-            <i className="fab fa-yarn" id="yarn"></i>
-            Yummy
-        </h1>
-        <SlideImage />
-        <Carousel />
-        </>
-    )
-}
+import Carousel from "../components/Carousel";
+import SlideImage from "../components/SlideImage";
 
-const mapStateToProps = (state :RootState) =>{
-    
-    return {
-        homeData:state.home
-    }
-}
-const mapdispatchToProps = (dispatch:AppDispatch)=>{
-    return {};
-}
+const HomePage = (props: i_home_props) => {
+  // const [data, setData] = useState([]);//k can den vi lay du lieu tren store
+  console.log(props);
 
-export default connect(mapStateToProps,mapdispatchToProps)(HomePage);
+  useEffect(() => {
+    props.getAllFoodRequest();
+  }, []);
+
+  return (
+    <>
+      <h1 id="home-panel">
+        <i className="fab fa-yarn" id="yarn"></i>
+        Yummy
+      </h1>
+      <SlideImage />
+      <Carousel foods={props.homeData} />
+    </>
+  );
+};
+
+const mapStateToProps = (state: RootState) => {
+  return {
+    homeData: state.home,
+  };
+};
+const mapDispatchToProps = (dispatch: AppDispatch) => {
+  return {
+    getAllFoodRequest: () => {
+      dispatch(actionGetFoodRequest());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

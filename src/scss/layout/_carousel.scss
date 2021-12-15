@@ -32,15 +32,15 @@
   .carousel-item {
     padding: 0.5em;
     margin: 1em 0;
-    border: 1px solid $gray-shadow;
+    border: 1px solid $light-more-gray;
     border-radius: 0.5em;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 10px $shadow;
     img {
       border-radius: 0.5em;
       position: relative;
       top: -1em;
       right: -1em;
-      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 3px 3px 10px $shadow;
     }
     p {
       position: relative;
@@ -51,7 +51,7 @@
         font-weight: bold;
         color: $price-light-red;
       }
-      .status-span {
+      .status-span-onsale {
         background-color: $on-sale-color;
         padding: 0.2em;
         // border-radius: 0.2em;
@@ -63,6 +63,11 @@
         bottom: 0.1em;
         width: 85.5px;
         text-align: center;
+      }
+      .status-span-outofstock {
+        @extend .status-span-onsale;
+        background-color: $out-of-stock-color;
+        
       }
     }
     h3 {
