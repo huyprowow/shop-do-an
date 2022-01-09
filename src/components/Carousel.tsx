@@ -7,7 +7,7 @@ const Carousel = (props: { foods: i_homeStateData[] }) => {
       {props.foods ? (
         props.foods.map((food, index) => {
           return (
-            <div className="carousel-item">
+            <div className="carousel-item" key={food._id}>
               <img src={food.image} alt={food.name} width="200" height="200" />
               <p>
                 price: <span className="price">{food.price}$</span> only

@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
-import { connect, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { connect } from "react-redux";
 import { RootState, AppDispatch } from "../types/store";
-import { i_homeStateData, i_home_props } from "../types/home";
+import { i_home_props } from "../types/home";
 import { actionGetFoodRequest } from "../actions/home";
 
 import Carousel from "../components/Carousel";
 import SlideImage from "../components/SlideImage";
+import HomePanel from "../components/HomePanel";
+import Advertise from "../components/Advertise";
 
 const HomePage = (props: i_home_props) => {
   // const [data, setData] = useState([]);//k can den vi lay du lieu tren store
@@ -17,11 +19,9 @@ const HomePage = (props: i_home_props) => {
 
   return (
     <>
-      <h1 id="home-panel">
-        <i className="fab fa-yarn" id="yarn"></i>
-        Yummy
-      </h1>
+      <HomePanel />
       <SlideImage />
+      <Advertise />
       <Carousel foods={props.homeData} />
     </>
   );

@@ -1,0 +1,97 @@
+#advertise-container {
+  display: none;
+  position: relative;
+  width: 100%;
+  // background-image: $nav-linear-gradient;
+  justify-content: center;
+  // border-bottom: 1px solid $bisque-color;
+  border-radius: 50px;
+  box-shadow: $neumorphism-dark-shadow, $neumorphism-light-shadow;
+  .advertise-header {
+    position: absolute;
+    z-index: 1;
+    left: 5px;
+    font-family: "The Nautigal", cursive;
+    text-shadow: 0 2px 1px #747474, -1px 3px 1px #767676;
+    #top-number {
+      font-size: 1.5em;
+      color: $price-light-red;
+      // text-decoration:underline;
+      text-shadow: 0 2px 1px #fd59590e, -1px 3px 1px #fd595948;
+    }
+  }
+  #ad-img-container {
+    align-self: center;
+    position: relative;
+    width: 250px;
+    height: 250px;
+
+    #ad-coffee-img {
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+    }
+    #ad-mask-img {
+      position: absolute;
+      mix-blend-mode: screen;
+      user-select: none;
+      bottom: 26px;
+      right: 26px;
+    }
+    figcaption {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      color: $price-light-red;
+      font-size: 1.2em;
+      text-shadow: 0 2px 1px #fd59590e, -1px 3px 1px #fd595948;
+      opacity: 0;
+      transition: 1s;
+    }
+    &:hover {
+      figcaption {
+        left: 56px;
+        opacity: 1;
+      }
+    }
+  }
+  .advertise-btn {
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: $white;
+    border: 1px solid $white;
+    border-radius: 50px;
+    font-size: 1.2em;
+    background-color: $neumorphism-background-white;
+    color: $neumorphism-text-gray;
+    box-shadow: $neumorphism-dark-shadow, $neumorphism-light-shadow;
+    .btn-arrow-text {
+      transition: all 0.5s;
+      cursor: pointer;
+      display: inline-block;
+    }
+    &::after {
+      content: "\00bb"; //css entities
+      position: absolute;
+      right: 22px;
+      transition: 0.5s;
+      opacity: 0;
+      color: $black;
+    }
+    &:hover {
+      box-shadow: $neumorphism-dark-shadow, $neumorphism-light-shadow inset;
+      .btn-arrow-text {
+        padding-right: 15px;
+        color: $black;
+      }
+      &::after {
+        opacity: 1;
+        right: 17px;
+      }
+    }
+  }
+}

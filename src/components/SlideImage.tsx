@@ -51,11 +51,10 @@ const SlideImage = () => {
       <div className="slides-container">
         {slideData.map((item: dataTypeSlide, i: number) => {
           return (
-            <>
+            <div key={nanoid()}>
               {/*k thay doi cac muc trong mang nen key dung luon index (mac du noi chung la k nen dung nen dung id tu data) */}
               <img
                 src={item.path}
-                key={nanoid()}
                 alt="test"
                 className={activeIndex === i ? "slide-active" : "slide"}
               />
@@ -66,7 +65,7 @@ const SlideImage = () => {
               >
                 {item.description}
               </span>
-            </>
+            </div>
           );
         })}
         <button className="slide-btn" id="btn-prev" onClick={() => prevSlide()}>

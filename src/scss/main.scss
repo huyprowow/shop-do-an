@@ -13,10 +13,17 @@
 @import "./layout/header";
 @import "./layout/slide-image";
 @import "./layout/carousel";
+@import "./layout/advertise";
 
+@import "./modules/button";
 @import "./modules/font";
 
 @import "./pages/home";
+@import "./pages/addproduct";
+@import "./pages/cart";
+@import "./pages/notfound";
+@import "./pages/payment";
 
 @import "./vendors/fontawesome";
+@import "./vendors/responsive";
 

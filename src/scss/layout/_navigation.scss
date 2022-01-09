@@ -1,13 +1,13 @@
 // @use "../abstracts/variable"; node-sass eu dung dc use
 // @import '../abstracts/variable';
 
-ul {
+#nav-bar {
   z-index: 1;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
   list-style-type: none;
-  background-image: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+  background-image: $nav-linear-gradient;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -24,6 +24,9 @@ ul {
       text-decoration: none;
       // color:rgb(92, 5, 92);
       color: #551a8b;
+      .label {
+        font-size: 0.77em;
+      }
     }
     a:active {
       color: inherit;

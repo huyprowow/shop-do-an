@@ -1,12 +1,13 @@
 .slides-container {
+  grid-area: slide;
   // margin-top: 0.1em;
-  width: 100%;
-  height: 40vh;
+  max-width: 100%;
+  height: 320px;
   position: relative;
 
   img {
     width: 100%;
-    height: 40vh;
+    height: 320px;
     position: absolute;
   }
 
@@ -28,6 +29,7 @@
     background-color: transparent;
     cursor: pointer;
     color: $gray;
+    font-size: 2em;
     &:hover {
       color: $lightgray;
     }

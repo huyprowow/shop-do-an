@@ -1,0 +1,8 @@
+#root {
+  display: grid;
+//   width: 100vw;
+  grid-template-areas:
+    "header"
+    "slide"
+    "carousel";
+}
