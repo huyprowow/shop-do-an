@@ -1,0 +1,35 @@
+#form-group {
+  text-align: center;
+  margin: 0 auto;
+  width: 40vw;
+  height: 45vh;
+  border: 1px solid $light-more-gray;
+  border-radius: 5px;
+  //   backdrop-filter:blur(20px);
+
+  #form-title {
+    font-size: 1.7rem;
+  }
+  .form-label {
+    display: block;
+  }
+  .inp-form {
+    border-bottom: 1px solid $black;
+    margin-bottom: 10px;
+  }
+  .error {
+    color: red;
+  }
+  .success {
+    color: green;
+  }
+  .btn-sign-in {
+    background-color: $on-sale-color;
+    margin: 2px;
+  }
+  .btn-sign-up {
+    @extend .btn-sign-in;
+    background-color: $black;
+    color: $white;
+  }
+}
