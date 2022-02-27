@@ -1,6 +1,9 @@
 #form-group {
   text-align: center;
   margin: 0 auto;
+  position: relative;
+  top:50%;
+  transform: translateY(40%);
   width: 40vw;
   height: 45vh;
   border: 1px solid $light-more-gray;

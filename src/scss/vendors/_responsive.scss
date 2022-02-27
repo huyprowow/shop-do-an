@@ -90,4 +90,30 @@
       }
     }
   }
+  #account{
+    .container {
+      .content {
+        #title {
+          font-size: 4rem;
+          margin-top: 11vh;
+          margin-left:-1vw;
+        }
+        .content-para {
+          bottom: 8vh;
+          left: 49vw;
+        }
+    
+        #link-to-signin {
+          left: 39.2vw;
+          bottom: 2vh;
+          &:hover {
+            transition: all 0.4s;
+            box-shadow: $btn-shadow;
+          }
+        }
+      }
+    }
+    
+  }
 }
+

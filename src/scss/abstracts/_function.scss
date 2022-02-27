@@ -1,0 +1,19 @@
+// Converts 1 gtri value to rem.
+// `$zero-safe-rem-value` tra ve 0 neu `$px-value` la 0.
+@function convert-to-rem($px-value) {
+  $rem-value: $px-value / $base-font-size;
+  $zero-safe-rem-value: if($px-value == 0, 0, $rem-value);
+
+  @return $zero-safe-rem-value;
+}
+
+//con vert 1 hoac nhieu px => rem
+@function convert-multi-to-rem($px-values) {
+  $rem-values: ();
+
+  @each $px-value in $px-values {
+    $rem-values: append($rem-values, convert-to-rem($px-value));
+  }
+
+  @return $rem-values;
+}

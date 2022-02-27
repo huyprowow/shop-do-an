@@ -1,5 +1,6 @@
 import { i_accountStateData } from "./account";
 export interface i_signIn_signOut {
+  //token: string|null;
   signInStatus: boolean;
   account: i_accountStateData;
 }
@@ -9,5 +10,8 @@ export interface i_signIn_signOut_Acc_Type {
 }
 export interface i_signIn_signOut_props {
   signInData: i_signIn_signOut;
-  signInRequest: () => void;
+}
+export interface i_signin_success_res {
+  message: string;
+  account: i_signIn_signOut;
 }

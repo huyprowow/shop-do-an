@@ -1,21 +1,24 @@
 import { useState } from "react";
+import http from "../apis/http-common";
+import { connect } from "react-redux";
+import { AppDispatch } from "../types/store";
+import { useHistory } from "react-router-dom";
+import { actionAddAcc } from "../actions/account";
+import { actionSignIn } from "../actions/signIn_signOut";
+import { AxiosError } from "../types/axios";
+import { i_signin_success_res } from "../types/signIn_signOut";
 import {
   i_accountStateData,
   i_account_error_res,
   i_account_success_res,
 } from "../types/account";
-import { connect } from "react-redux";
-import { AppDispatch } from "../types/store";
-import { actionAddAcc } from "../actions/account";
-import http from "../apis/http-common";
-import { AxiosError } from "../types/axios";
 
-const LoginForm = (props: { addAcc: Function }) => {
+const LoginForm = (props: { addAcc: Function; signIn: Function }) => {
   const [password, setPassword] = useState<string>("");
   const [userID, setUserID] = useState<string>("");
   const [error, setError] = useState<string[]>([]);
   const [successMsg, setSuccessMsg] = useState<string>("");
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  let history = useHistory();
   const handleChange = (e: React.ChangeEvent) => {
     e.preventDefault();
     setError([]);
@@ -25,10 +28,27 @@ const LoginForm = (props: { addAcc: Function }) => {
     } else {
       setPassword(value);
     }
-    console.log(userID + "   " + password);
   };
   const handleSignIn = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    http
+      .post<i_signin_success_res>("/accounts/signin", {
+        userID: userID,
+        password: password,
+      })
+      .then((res) => {
+        props.signIn(true, res.data.account);
+
+        setSuccessMsg(res.data.message);
+        history.push("/account");
+      })
+      .catch((err: AxiosError) => {
+        if (err.response?.data) {
+          let errList: i_account_error_res = err.response?.data;
+          let errMsgList: string[] = errList.errors.map((err) => err.msg);
+          setError(errMsgList);
+        }
+      });
   };
   const handleSignUp = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -101,6 +121,9 @@ const mapDispatchToProps = (dispatch: AppDispatch) => {
   return {
     addAcc: (newAcc: i_accountStateData) => {
       dispatch(actionAddAcc(newAcc));
+    },
+    signIn: (signInStatus: boolean, account: i_accountStateData) => {
+      dispatch(actionSignIn(signInStatus, account));
     },
   };
 };
