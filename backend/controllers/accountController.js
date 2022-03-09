@@ -1,4 +1,6 @@
+require("dotenv").config();
 const Account = require("../models/account");
+const jwt = require("jsonwebtoken");
 const { body, validationResult } = require("express-validator");
 
 exports.get_account_list = (req, res, next) => {
@@ -88,30 +90,44 @@ exports.signin_account = [
   //sigin
   async (req, res, next) => {
     const errors = validationResult(req);
-    console.log(req.body);
+    // console.log(req.body);
     if (!errors.isEmpty()) {
       res.status(422).json({ errors: errors.array() });
     } else {
       const { userID, password } = req.body;
-      Account.findOne({ userID: userID, password: password }).exec(
-        (err, account) => {
-          if (err) return next(err);
-          if (account) {
-            res.status(200).json({
-              message: "Account signed in successfully",
-              account: {
-                _id: account._id,
-                userID: account.userID,
-                password: account.password,
-              },
-            });
-          } else {
-            res.status(401).json({
-              errors: [{ msg: "Username or password is incorrect" }],
-            });
-          }
+      Account.findOne({ userID: userID }).exec((err, account) => {
+        if (err) return next(err);
+        if (account) {
+          account.comparePassword(password).then((isMatch) => {
+            if (isMatch) {
+              const signedToken = jwt.sign(
+                account.toJSON(),
+                process.env.TOKEN_SECRET_KEY
+              );
+
+              const accessToken = "Bearer " + signedToken;
+              const resPassword = `${password} |sau khi hash => ${account.password}`;
+              res.status(200).json({
+                message: "Account signed in successfully",
+                account: {
+                  _id: account._id,
+                  userID: account.userID,
+                  password: resPassword,
+                },
+                token: accessToken,
+              });
+            } else {
+              res.status(401).json({
+                errors: [{ msg: "Username or password is incorrect" }],
+              });
+            }
+          });
+        }else{
+          res.status(401).json({
+            errors: [{ msg: "Username or password is incorrect" }],
+          });
         }
-      );
+      });
     }
   },
 ];

@@ -5,9 +5,9 @@ import {
 import * as Types from "../constants/actionTypes";
 
 const initialState: i_signIn_signOut = {
-  //token: localStorage.getItem('token'),
+  //
   //  isAuthenticated: localStorage.getItem('token') ? true : false
-  signInStatus: false,
+  signInStatus: localStorage.getItem('token')? true : false,
   account: {
     _id: "",
     userID: "",

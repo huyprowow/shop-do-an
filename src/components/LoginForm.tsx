@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import http from "../apis/http-common";
 import { connect } from "react-redux";
 import { AppDispatch } from "../types/store";
@@ -18,7 +18,15 @@ const LoginForm = (props: { addAcc: Function; signIn: Function }) => {
   const [userID, setUserID] = useState<string>("");
   const [error, setError] = useState<string[]>([]);
   const [successMsg, setSuccessMsg] = useState<string>("");
+  const isSigned = localStorage.getItem("token");
   let history = useHistory();
+
+  useEffect(() => {
+    if (isSigned) {
+      history.push("/account");
+    }
+  });
+
   const handleChange = (e: React.ChangeEvent) => {
     e.preventDefault();
     setError([]);
@@ -38,9 +46,11 @@ const LoginForm = (props: { addAcc: Function; signIn: Function }) => {
       })
       .then((res) => {
         props.signIn(true, res.data.account);
-
+        const token = res.data.token?.split(" ")[1]; //lay phan sau cua token (sau "Bearer ")
+        localStorage.setItem("token", token!); ///! => chac chan co token
+        // console.log(localStorage.getItem("token"));
         setSuccessMsg(res.data.message);
-        history.push("/account");
+        history.push("/account"); //dashboard
       })
       .catch((err: AxiosError) => {
         if (err.response?.data) {

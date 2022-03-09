@@ -19,12 +19,12 @@ const HomePage = (props: i_home_props) => {
 
   return (
     <>
-    <div id="home">
-      <HomePanel />
-      <SlideImage />
-      <Advertise />
-      <Carousel foods={props.homeData} />
-    </div>
+      <div id="home">
+        <HomePanel />
+        <SlideImage />
+        <Advertise />
+        <Carousel foods={props.homeData} />
+      </div>
     </>
   );
 };

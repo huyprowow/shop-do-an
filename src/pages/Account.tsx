@@ -10,7 +10,7 @@ const Account = (props: i_signIn_signOut_props) => {
   const { signInStatus, account } = props.signInData;
   //<LoginForm />//chua lm signin
   //wellcome chua login, nhan j do de goi login form
-  //<Dashboard /> //sau khi login show cai nay co thong tin use password voi log out
+  //<Dashboard /> //sau khi login show cai nay co thong tin user voi log out
   return (
     <div id="account">
       {signInStatus ? <Dashboard userInformation={account} /> : <GetStart />}

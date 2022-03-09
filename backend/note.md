@@ -27,6 +27,9 @@ npm install nodemon --save-dev
   "devstart": "nodemon ./sever",
   "serverstart": "DEBUG=backend:\* |npm run devstart"
 
+- bcrypt: hash password
+- jsonwebtoken: tạo token để xác thực jwt
+
 # **react, node chay tren 2 port khac nhau react port 3000, node port trong env (hoac 8000), node luon co /api trc router de tranh trung(de) vs cac router trong react**
 
 - require express va sua dinh nghia 2 router /api, /api/users va chay server tren port o file env(neu k co mac dinh la 8000)
