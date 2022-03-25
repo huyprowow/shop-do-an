@@ -1,7 +1,9 @@
 {
   "name": "shop-do-an",
+  "author":"Huy <huyprowow@gmail.com> (https://huyprowow.github.io/)",
+  "description": "A dummy MERN stack project create to practice",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
   "main": "index.js",
   "dependencies": {
     "async": "^3.2.2",
