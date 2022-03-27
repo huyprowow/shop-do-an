@@ -48,6 +48,7 @@ const LoginForm = (props: { addAcc: Function; signIn: Function }) => {
         props.signIn(true, res.data.account);
         const token = res.data.token?.split(" ")[1]; //lay phan sau cua token (sau "Bearer ")
         localStorage.setItem("token", token!); ///! => chac chan co token
+        localStorage.setItem("userID", userID);
         // console.log(localStorage.getItem("token"));
         setSuccessMsg(res.data.message);
         history.push("/account"); //dashboard
