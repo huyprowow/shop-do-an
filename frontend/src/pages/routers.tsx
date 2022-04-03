@@ -11,6 +11,7 @@ import Payment from './Payment';
 import NotFound from './NotFound';
 import Cart from './Cart';
 import LoginForm from '../components/LoginForm';
+import Chat from './Chat';
 
 const routers=[
   { path: "/", exact: true, component: HomePage  },
@@ -19,6 +20,7 @@ const routers=[
   { path: "/payment", exact: true, component: Payment },
   { path: "/cart", exact: true, component: Cart },
   { path: "/account/signin", exact: true, component: LoginForm },
+  {path:"/chat",exact:true,component:Chat},
   { component:  NotFound },
 ];
 
