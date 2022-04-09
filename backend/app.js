@@ -7,6 +7,7 @@ var cors = require("cors");
 
 var homeRouter = require("./routes/home");
 var accountRouter = require("./routes/account");
+var chatRouter = require("./routes/chat");
 var indexRouter = require("./routes/index");
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/", indexRouter);
 app.use("/api", homeRouter);
 app.use("/api/accounts", accountRouter);
+app.use("/api/chat",chatRouter);
 
 // app.use("*", (req, res) => {
 //   res.status(404).json({ error: "not found" });

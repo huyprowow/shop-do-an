@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import { RootState } from "../types/store";
-import { actionGetAccRequest } from "../actions/account";
 
 import Dashboard from "../components/Dashboard";
 import GetStart from "../components/GetStart";
@@ -22,12 +21,4 @@ const mapStateToProps = (state: RootState) => {
     signInData: state.signIn,
   };
 };
-// const mapDispatchToProps = (dispatch: AppDispatch) => {
-//   return {
-//     getAllAccRequest: () => {
-//       dispatch(actionGetAccRequest());
-//     },
-//   };
-// };
-
 export default connect(mapStateToProps, null)(Account);

@@ -1,7 +1,6 @@
-
+import { Link } from "react-router-dom";
 const Dashboard = () => {
-  const userID  = localStorage.getItem("userID");
-  
+  const userID = localStorage.getItem("userID");
 
   const logOut = () => {
     localStorage.removeItem("token");
@@ -25,22 +24,27 @@ const Dashboard = () => {
           width="100"
         />
         <ul className="feature">
-          <li>
-            <i className="fa-solid fa-heart icon"></i>
-            <span className="text">Sản Phẩm đã thích</span>
-            <i className="fa-solid fa-greater-than icon-last"></i>
-          </li>
-
-          <li>
-            <i className="fas fa-shopping-cart icon"></i>
-            <span className="text">Giỏ hàng</span>
-            <i className="fa-solid fa-greater-than icon-last"></i>
-          </li>
-          <li>
-            <i className="fa-solid fa-message icon"></i>
-            <span className="text">Nhắn tin</span>
-            <i className="fa-solid fa-greater-than icon-last"></i>
-          </li>
+          <Link to="/like" className="link">
+            <li>
+              <i className="fa-solid fa-heart icon"></i>
+              <span className="text">Sản Phẩm đã thích</span>
+              <i className="fa-solid fa-greater-than icon-last"></i>
+            </li>
+          </Link>
+          <Link to="/cart" className="link">
+            <li>
+              <i className="fas fa-shopping-cart icon"></i>
+              <span className="text">Giỏ hàng</span>
+              <i className="fa-solid fa-greater-than icon-last"></i>
+            </li>
+          </Link>
+          <Link to="/chat" className="link">
+            <li>
+              <i className="fa-solid fa-message icon"></i>
+              <span className="text">Nhắn tin</span>
+              <i className="fa-solid fa-greater-than icon-last"></i>
+            </li>
+          </Link>
         </ul>
         <div id="suggest-product">
           <h3>gợi ý</h3>

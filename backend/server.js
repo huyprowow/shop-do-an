@@ -18,6 +18,18 @@ app.set("port", port);
 
 const server = http.createServer(app);
 
+// establish socket
+
+const {Server}=require("socket.io");
+const SocketHandle=require("./utils/socket");
+//! global variable
+global.io=new Server(server,{
+  cors:{
+    origin:"*"
+  }
+});
+global.io.on("connection",SocketHandle.connection)
+
 //-----------ket noi mongodb-------------//
 const mongoose = require("mongoose");
 
@@ -28,7 +40,7 @@ mongoose
     maxPoolSize: 1000, //toi da 1000 nguoi co the ket noi,
     wtimeoutMS: 2500, //doi het thoi gian (wait time out):  2500ms
     useNewUrlParser: true,
-    useUnifiedTopology: true 
+    useUnifiedTopology: true,
   })
   .catch((err) => {
     //loi
@@ -42,7 +54,6 @@ mongoose
     server.on("error", onError);
     server.on("listening", onListening);
   });
-
 
 // Normalize a port into a number, string, or false.
 

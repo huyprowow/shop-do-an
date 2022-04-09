@@ -11,8 +11,6 @@ import Advertise from "../components/Advertise";
 
 const HomePage = (props: i_home_props) => {
   // const [data, setData] = useState([]);//k can den vi lay du lieu tren store
-  console.log(props);
-
   useEffect(() => {
     props.getAllFoodRequest();
   }, []);

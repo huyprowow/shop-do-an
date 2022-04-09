@@ -31,8 +31,11 @@
       padding-top: 10px;
       list-style-type: none;
       height: 30vh;
-      li {
-        width: auto;
+      .link{
+        text-decoration: none;
+        color: $black;
+        li {
+          width: auto;
         height: 30%;
         width: 70%;
         margin: 5px;
@@ -70,9 +73,6 @@
             padding-right: 2%;
           }
         }
-        .fa-shopping-cart {
-          color: $black;
-        }
         .fa-heart {
           color: $out-of-stock-color;
         }
@@ -92,6 +92,8 @@
           text-align: right;
           padding-right: 0;
         }
+      }
+
       }
     }
     .suggest-product {

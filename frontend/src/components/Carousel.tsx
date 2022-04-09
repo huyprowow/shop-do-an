@@ -1,7 +1,7 @@
 import { i_homeStateData } from "../types/home";
 
 const Carousel = (props: { foods: i_homeStateData[] }) => {
-  console.log(props.foods);
+
   return (
     <div id="carousel-container">
       {props.foods ? (
